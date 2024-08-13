@@ -55,7 +55,8 @@ function rebuildOptions(variantSelects) {
         }
         }
         //if a new option has been selected, restart the whole process
-        if(change) variantSelects.dispatchEvent(new Event('change', { bubbles: true }));
+        //This line causes it to jump into an infinite loop in my shop (Dawn 15.0.2).
+        //if(change) variantSelects.dispatchEvent(new Event('change', { bubbles: true }));
     }
 
 // Select the node that will be observed for mutations
